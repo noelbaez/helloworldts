@@ -1,0 +1,115 @@
+{
+  "_version": "1.89.0",
+  "sap.app": {
+    "id": "sap.btp.helloworldts",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.33.0",
+      "toolsId": "3a02d357-5c79-415b-af6e-e87cebd42ea5"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "helloworld-show": {
+          "semanticObject": "helloworld",
+          "action": "show",
+          "title": "{{helloworld-show.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.154.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.btp.helloworldts.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "sap.btp.helloworldts.view",
+        "async": true,
+        "viewPath": "sap.btp.helloworldts.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView": {
+          "id": "View",
+          "name": "View"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.btp.helloworldts.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sapbtphelloworldts"
+  }
+}

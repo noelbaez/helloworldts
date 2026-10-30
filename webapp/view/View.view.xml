@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="sap.btp.helloworldts.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <FlexBox id="_IDGenFlexBox"
+                direction="Row"
+                alignItems="Center"
+                class="sapUiTinyMarginBotto,"
+            >
+                <Text
+                    id="_IDGenText"
+                    text="Accept the Button"
+                    class="sapUiTinyMarginEnd"
+                />
+                <Button
+                    id="_IDGenButton"
+                    text="Click the Button"
+                    press=".onPress"
+                />
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>
